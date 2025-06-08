@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <title>ISRO Clone</title>
+  
+  <link rel="stylesheet" href="styles/missions.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Roboto,Arial;
+      background: linear-gradient(to right, #0d1b2a, #1b263b);
+      color: white;
+      overflow-x: hidden;
+
+    }
+    header {
+  background-color: #040314;
+  padding: 20px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #0b0c1a; 
+   color: white;
+}
+
+.heading-container {
+  text-align: center;
+  flex: 1;
+}
+
+.header-icon {
+  height: 90px;
+  width: auto;
+  padding: 0 15px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  transition: color 0.3s ease;
+}
+
+header h1:hover {
+  color: #e63946;
+}
+
+nav {
+  margin-top: 10px;
+}
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      position: relative;
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: #e63946;
+      left: 0;
+      bottom: -5px;
+      transition: width 0.3s ease;
+    }
+    nav a:hover::after {
+      width: 100%;
+    }
+    .explore-text {
+      padding: 200px 100px;
+      text-align: center;
+      
+      
+      background-size: cover;
+      background-position: center;
+      color: white;
+      animation: fadeIn 2s ease-in;
+
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+   
+.status {
+  right: 15px;
+  background-color: rgba(102, 16, 242, 0.8);
+}
+
+    footer {
+      text-align: center;
+      padding: 30px 10px;
+      background: #1b263b;
+      font-size: 0.9rem;
+      border-top: 2px solid #e63946;
+    }
+    
+    .animated-heading {
+  animation: glowPulse 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes glowPulse {
+  from {
+    text-shadow: 0 0 5px #e3dddd, 0 0 10px #e6e2e2;
+    color: #fff;
+  }
+  to {
+    text-shadow: 0 0 15px #420006, 0 0 30px #e63946;
+    color: #e63946;
+  }
+}
+.explorebutton{
+  margin-top: 100px;
+  justify-content: space-between;
+  margin-right: 20px;
+  padding: 8px;
+  border-radius: 10px;
+  background-color: #e63946;
+  color: white;
+  font-weight: bold;
+}
+.Launchbutton, .explorebutton {
+   padding: 15px 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(90deg, #9D00FF, #0066FF);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.Launchbutton:hover,
+.explorebutton:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 102, 255, 0.4);
+}
+
+.Launchbutton:active,
+.explorebutton:active {
+  background-color: #e63946;
+  box-shadow: 0 0 20px 5px #26043b;
+  transform: scale(0.98);
+}
+.background-video {
+  position: fixed;         
+  top: 0;
+  left: 0;
+  width: 100vw;            
+  height: 100vh;           
+  object-fit: cover;       
+  z-index: -1;             
+  pointer-events: none;    
+}
+
+.isro-portal{
+  background-color: #1e293b; 
+  border-radius: 12px;
+   overflow: hidden; 
+   cursor: pointer; 
+   transition: transform 0.2s;
+
+
+}
+.isro-portal:hover{
+  transform: scale(1.03);
+  box-shadow: 0 0 20px rgba(230, 57, 70, 0.6);
+}
+
+
+  </style>
+</head>
+<body>
+ <header >
+  
+  <img src="logos/isrologo2.avif" alt="ISRO Logo" style="height: 85px;">
+
+  
+  <div style="text-align: center; margin-left: 40px;">
+    <h1 style="margin: 0; font-size: 28px; font-weight: bold; color: #ff4d4d;">ISRO</h1>
+    <p style="margin-left: 30px ; font-size: 16px; font-weight: 500;">Indian Space Research Organization</p>
+    <nav style="margin-top: 8px;">
+      <a href="#" style="margin: 0 12px; color: white; text-decoration: none;">About</a>
+      <a href="#" style="margin: 0 12px; color: white; text-decoration: none;">Projects</a>
+      <a href="#" style="margin: 0 12px; color: white; text-decoration: none;">Contact</a>
+    </nav>
+  </div>
+
+
+  <div style="display: flex; align-items: center; gap: 50px;">
+    
+    <div style="position: relative;">
+      <input 
+        type="text" 
+        placeholder="Search..." 
+        style="
+          padding: 8px 20px 8px 14px;
+          border-radius: 20px;
+          border: none;
+          background-color: #1e1e2f;
+          color: white;
+          font-size: 14px;
+          width: 160px;
+          box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+        "
+      >
+      <span style="
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #aaa;
+        font-size: 16px;
+      ">
+        🔍
+      </span>
+    </div>
+
+    
+    <img src="logos/emblem.png" alt="Gov Logo" style="height: 90px; margin-left: 50px;">
+  </div>
+</header>
+
+
+  <div class="explore-text">
+    <video autoplay muted loop playsinline class="background-video">
+  <source src="logos/FREE _ Earth View From The Moon Animation Background.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
+    <h1>Exploring Beyond the Skies</h1>
+    <button class="explorebutton">Explore Missions</button>
+    <button class="Launchbutton">Launch Now</button>
+  </div>
+
+  <div class="recent-missions" >
+    <h2 style="text-align: center; margin-bottom: 50px;">Recent Missions</h2>
+    <div class="projects">
+   <div class="mission-card" style="background-image: url('logos/GSLV2-F15.jpeg');">
+
+  <div class="mission-overlay">
+    <span class="tag category">Human Spaceflight / Tech Demonstration</span>
+    <span class="tag status">Upcoming</span>
+    <h3>Gaganyaan Test Mission</h3>
+    <p> Test mission featuring Vyommitra humanoid; paves way for India’s first crewed flight.</p>
+    <div class="mission-moreinfo">
+      <span>2025</span>
+      <span> Low Earth Orbit</span>
+    </div>
+  </div>
+</div>
+<div class="mission-card" style="background-image: url('logos/pslv2-c61.webp');">
+
+  <div class="mission-overlay">
+    <span class="tag category">Advanced Earth Observation</span>
+    <span class="tag status" style="background-color: green;">Completed(Failure in Deployment)</span>
+    <h3>PSLV-C61 / EOS-09 </h3>
+    <p>  Launch succeeded but satellite deployment failed. Mission intended for surface imaging.</p>
+    <div class="mission-moreinfo">
+      <span>May 2025</span>
+      <span> Low Earth Orbit</span>
+    </div>
+  </div>
+</div>
+ <div class="mission-card" style="background-image: url('logos/GSLV3-F15.webp');size: 100%;">
+  <div class="mission-overlay">
+    <span class="tag category">Navigation
+
+</span>
+    <span class="tag status" style="background-color: green;">Completed</span>
+    <h3>GSLV-F15 / NVS-02</h3>
+    <p>Strengthens India's NavIC system with L1 civilian signals for smartphones and navigation.</p>
+    <div class="mission-moreinfo">
+      <span>Jan 2025</span>
+      <span>Geosynchronous Transfer Orbit (GTO)</span>
+    </div>
+  </div>
+</div>
+ <div class="mission-card" style="background-image: url('logos/SpaDeX.webp');">
+  <div class="mission-overlay">
+    <span class="tag category">Satellite Docking & Tech Demonstration</span>
+    <span class="tag status">Completed</span>
+    <h3>SpaDeX</h3>
+    <p> A demo of space docking tech for future repair, refueling, and human missions.</p>
+    <div class="mission-moreinfo">
+      <span>Dec 2024</span>
+      <span> Low Earth Orbit</span>
+    </div>
+  </div>
+</div>
+ <div class="mission-card" style="background-image: url('logos/XPoSat3.png');">
+  <div class="mission-overlay">
+    <span class="tag category">Earth Observation</span>
+    <span class="tag status">Ongoing</span>
+    <h3>XPoSat</h3>
+    <p>India’s first dedicated X-ray polarimetry mission to study neutron stars, black holes, etc.</p>
+    <div class="mission-moreinfo">
+      <span>Jan 2024</span>
+      <span> Low Earth Orbit</span>
+    </div>
+  </div>
+</div>
+ <div class="mission-card" style="background-image: url('logos/Aditya-L1.webp');">
+  <div class="mission-overlay">
+    <span class="tag category">Solar Observation</span>
+    <span class="tag status">Ongoing</span>
+    <h3> Aditya-L1 </h3>
+    <p>India’s first solar mission, studying the Sun's corona, solar flares & winds from Lagrange Point 1 (L1).</p>
+    <div class="mission-moreinfo">
+      <span> 2023</span>
+      <span> Halo Orbit around L1</span>
+    </div>
+  </div>
+</div>
+
+    </div>
+    <div class="more-missions-container">
+       <button class="more-missions">View All Projects</button>
+    </div>
+   
+  </div>
+  <div style= padding: 40px 20px; color: white; text-align: center;">
+  <h2 style="font-size: 2rem; color: #38bdf8; margin-bottom: 30px;">🔗 ISRO Portals</h2>
+
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 20px; max-width: 1000px; margin: auto;">
+
+    
+    <div class="isro-portal" >
+      <img src="logos/vedas.webp"  style="width: 100%; ">
+      <div style="padding: 10px;">Vedas</div>
+    </div>
+
+  
+     <div class="isro-portal" >
+      <img src="logos/bhuvan.webp"  style="width: 100%;">
+      <div style="padding: 10px;">Bhuvan</div>
+    </div>
+     <div class="isro-portal" >
+      <img src="logos/stem.webp"  style="width: 100%;">
+      <div style="padding: 10px;">Isro Stem</div>
+    </div>
+
+  
+     <div class="isro-portal" >
+      <img src="logos/mosdac - Copy.webp"  style="width: 100%; ">
+      <div style="padding: 10px;">Mosdac</div>
+    </div>
+  </div>
+</div>
+
+
+  
+  <footer style="background-color: #0a0a23; color: white; padding: 30px 10px; text-align: center;margin-top: 40px;">
+  <div >
+    <h2 style="color: #f92f61;">ISRO</h2>
+    <p>Indian Space Research Organization</p>
+    <p>Department of Space, Government of India</p>
+    
+    <div style="margin: 20px 0;">
+      <a href="https://www.isro.gov.in" target="_blank" style="color: #00aaff; text-decoration: none; margin: 0 15px;">Official Website</a>
+      <a href="https://www.isro.gov.in/Careers.html" target="_blank" style="color: #00aaff; text-decoration: none; margin: 0 15px;">Careers</a>
+     
+    </div>
+
+    <p style="font-size: 14px; color: #aaa;">© 2025 ISRO. All rights reserved.</p>
+  </div>
+</footer>
+
+
+</body>
+</html>
